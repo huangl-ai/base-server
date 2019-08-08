@@ -1,0 +1,45 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: sc-gateway-service
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          #为true时开启基于服务发现的路由规则
+          enabled: false
+          lowerCaseServiceId: true
+      routes:
+        - id: service-ribbon
+          uri: lb://SERVICE-RIBBON
+          predicates:
+            - Path=/v*/**
+          filters:
+            - StripPrefix=1
+        - id: service-hi
+          uri: lb://SERVICE-HI
+          predicates:
+            - Path=/d*/**
+          filters:
+            - StripPrefix=1
+        - id: service-feign
+          uri: lb://SERVICE-FEIGN
+          predicates:
+            - Path=/c*/**
+          filters:
+            - StripPrefix=1
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
