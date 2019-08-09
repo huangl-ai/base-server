@@ -1,0 +1,15 @@
+server:
+  port: 8888
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/huangl-ai/base-server.git
+#          username: huangl-ai
+#          password: asdfgh99420
+          search-paths: SC_CONFIG
+      label: master
+  application:
+    name: config-server
