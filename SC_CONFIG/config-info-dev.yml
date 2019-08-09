@@ -1,0 +1,4 @@
+cn:
+  springcloud:
+    book:
+      config: Im the file with dev environment
