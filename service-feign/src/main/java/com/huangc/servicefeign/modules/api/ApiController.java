@@ -1,7 +1,7 @@
 package com.huangc.servicefeign.modules.api;
 
-import com.huangc.servicefeign.modules.api.service.CloudUserService;
-import com.huangc.servicefeign.modules.api.service.SchedualServiceHi;
+import com.huangc.servicefeign.modules.api.feign.CloudUserService;
+import com.huangc.servicefeign.modules.api.service.HiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,19 +18,24 @@ public class ApiController {
 
     //编译器报错，无视。 因为这个Bean是在程序启动的时候注入的，编译器感知不到，所以报错。
     @Autowired
-    SchedualServiceHi schedualServiceHi;
+    HiService hiService;
 
     @Autowired
     private CloudUserService cloudUserService;
 
     @GetMapping(value = "/hi")
     public String sayHi(@RequestParam String name) {
-        return schedualServiceHi.sayHiFromClientOne( name );
+        return hiService.sayHiFromClientOne( name );
     }
 
     @RequestMapping("getUsers")
     public String user(){
 
         return cloudUserService.getUser();
+    }
+    @RequestMapping("fallBack")
+    public String fallBack(){
+
+        return "a error happend!";
     }
 }

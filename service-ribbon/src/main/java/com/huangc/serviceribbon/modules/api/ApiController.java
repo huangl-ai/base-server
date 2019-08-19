@@ -21,4 +21,8 @@ public class ApiController {
     public String hi(@RequestParam String name) {
         return helloService.hiService( name );
     }
+    @GetMapping(value = "/him")
+    public String him(@RequestParam String name) {
+        return helloService.himService( name );
+    }
 }

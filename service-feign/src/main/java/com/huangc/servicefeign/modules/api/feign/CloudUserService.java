@@ -1,4 +1,4 @@
-package com.huangc.servicefeign.modules.api.service;
+package com.huangc.servicefeign.modules.api.feign;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;

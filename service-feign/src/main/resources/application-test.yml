@@ -1,0 +1,8 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:8762/eureka/
+server:
+  port: 8766
+cloud:
+  api: hi

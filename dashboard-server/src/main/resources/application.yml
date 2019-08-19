@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: dashboard-server
+server:
+  port: 8780

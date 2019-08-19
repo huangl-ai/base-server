@@ -30,10 +30,15 @@ spring:
             - Path=/c*/**
           filters:
             - StripPrefix=1
-  redis:
-    host: localhost
-    port: 6379
-    database: 0
+            - name: Hystrix
+              args:
+                name: fallbackcmd
+                fallbackUri: forward:/fallback
+hystrix.command.fallbackcmd.execution.isolation.thread.timeoutInMilliseconds: 3000
+#  redis:
+#    host: localhost
+#    port: 6379
+#    database: 0
 eureka:
   client:
     service-url:
