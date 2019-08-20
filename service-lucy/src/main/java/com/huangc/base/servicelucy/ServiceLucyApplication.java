@@ -1,4 +1,4 @@
-package com.huangc.servicefeign;
+package com.huangc.base.servicelucy;
 
 import com.netflix.hystrix.contrib.metrics.eventstream.HystrixMetricsStreamServlet;
 import org.springframework.boot.SpringApplication;
@@ -9,15 +9,16 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 
-@SpringBootApplication(scanBasePackages = "com.huangc")
-@EnableEurekaClient
-@EnableDiscoveryClient
+@SpringBootApplication
 @EnableFeignClients
-public class ServiceFeignApplication {
+@EnableDiscoveryClient
+@EnableEurekaClient
+public class ServiceLucyApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ServiceFeignApplication.class, args);
+        SpringApplication.run(ServiceLucyApplication.class, args);
     }
+
 
     // 此配置是为了服务监控而配置，与服务容错本身无关，
     // ServletRegistrationBean因为springboot的默认路径不是"/hystrix.stream"，

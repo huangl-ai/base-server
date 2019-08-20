@@ -28,6 +28,11 @@ public class ApiController {
         return hiService.sayHiFromClientOne( name );
     }
 
+    @GetMapping(value = "/him")
+    public String sayHim(@RequestParam String name) {
+        return hiService.sayHiFromClientTwo( name );
+    }
+
     @RequestMapping("getUsers")
     public String user(){
 

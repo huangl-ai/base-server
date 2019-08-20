@@ -1,0 +1,18 @@
+package com.huangc.base.serviceturbine;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.turbine.EnableTurbine;
+
+@SpringBootApplication
+/**
+ * @EnableTurbine注解包含了@EnableDiscoveryClient注解，即开启了注册服务
+ */
+@EnableTurbine
+public class ServiceTurbineApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(ServiceTurbineApplication.class, args);
+    }
+
+}

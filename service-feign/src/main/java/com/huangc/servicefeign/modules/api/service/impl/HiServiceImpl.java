@@ -20,4 +20,9 @@ public class HiServiceImpl implements HiService {
     public String sayHiFromClientOne(String name) {
         return schedualServiceHi.sayHiFromClientOne(name);
     }
+
+    @Override
+    public String sayHiFromClientTwo(String name) {
+        return schedualServiceHi.sayHiFromClientTwo(name);
+    }
 }

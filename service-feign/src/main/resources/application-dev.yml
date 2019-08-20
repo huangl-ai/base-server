@@ -5,4 +5,5 @@ eureka:
 server:
   port: 8769
 cloud:
-  api: him
+  api: hi
+  apim: him

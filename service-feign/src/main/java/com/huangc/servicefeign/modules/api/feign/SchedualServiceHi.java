@@ -7,6 +7,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @FeignClient(value = "service-ribbon",fallback = SchedualServiceHiHystric.class)
 public interface SchedualServiceHi {
+
     @RequestMapping(value = "${cloud.api}",method = RequestMethod.GET)
     String sayHiFromClientOne(@RequestParam(value = "name") String name);
+
+    @RequestMapping(value = "${cloud.apim}",method = RequestMethod.GET)
+    String sayHiFromClientTwo(@RequestParam(value = "name") String name);
 }
