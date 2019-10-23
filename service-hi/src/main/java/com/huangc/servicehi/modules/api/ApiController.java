@@ -1,5 +1,6 @@
 package com.huangc.servicehi.modules.api;
 
+import com.huangc.servicehi.modules.common.Result;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -30,6 +31,12 @@ public class ApiController {
     @ResponseBody
     public String homeOther(@RequestParam(value = "name", defaultValue = "forezp") String name) {
         return "hescim " + name + " ,i am from port:"+ port ;
+    }
+
+    @RequestMapping("/hime")
+    @ResponseBody
+    public Result homeOthere(@RequestParam(value = "name", defaultValue = "forezp") String name) {
+        return new Result("hescim " + name + " ,i am from port:"+ port).ok();
     }
 
     public static void main(String[] args) {

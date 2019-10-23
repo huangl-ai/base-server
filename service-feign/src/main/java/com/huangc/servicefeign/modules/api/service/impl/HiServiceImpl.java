@@ -2,6 +2,7 @@ package com.huangc.servicefeign.modules.api.service.impl;
 
 import com.huangc.servicefeign.modules.api.feign.SchedualServiceHi;
 import com.huangc.servicefeign.modules.api.service.HiService;
+import com.huangc.servicefeign.modules.common.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,5 +25,10 @@ public class HiServiceImpl implements HiService {
     @Override
     public String sayHiFromClientTwo(String name) {
         return schedualServiceHi.sayHiFromClientTwo(name);
+    }
+
+    @Override
+    public Result sayHiFromClientTwoe(String name) {
+        return schedualServiceHi.sayHiFromClientTwoe(name);
     }
 }

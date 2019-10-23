@@ -1,12 +1,11 @@
 package com.huangc.servicefeign.modules.api;
 
+import com.huangc.servicefeign.modules.api.feign.CloService;
 import com.huangc.servicefeign.modules.api.feign.CloudUserService;
 import com.huangc.servicefeign.modules.api.service.HiService;
+import com.huangc.servicefeign.modules.common.Result;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @Auther: huangl
@@ -23,6 +22,9 @@ public class ApiController {
     @Autowired
     private CloudUserService cloudUserService;
 
+    @Autowired
+    private CloService cloService;
+
     @GetMapping(value = "/hi")
     public String sayHi(@RequestParam String name) {
         return hiService.sayHiFromClientOne( name );
@@ -33,10 +35,28 @@ public class ApiController {
         return hiService.sayHiFromClientTwo( name );
     }
 
+    @RequestMapping("/hime")
+    @ResponseBody
+    public Result homeOthere(@RequestParam(value = "name", defaultValue = "forezp") String name) {
+        return hiService.sayHiFromClientTwoe(name);
+    }
+
+    @RequestMapping("/himd")
+    @ResponseBody
+    public Result homeOthered(@RequestParam(value = "name", defaultValue = "forezp") String name) {
+        return hiService.sayHiFromClientTwoe(name);
+    }
+
     @RequestMapping("getUsers")
     public String user(){
 
         return cloudUserService.getUser();
+    }
+
+    @RequestMapping("/user")
+    @ResponseBody
+    public Object user(@RequestParam(value = "id", defaultValue = "forezp") String id) {
+        return cloService.getUser(id);
     }
     @RequestMapping("fallBack")
     public String fallBack(){

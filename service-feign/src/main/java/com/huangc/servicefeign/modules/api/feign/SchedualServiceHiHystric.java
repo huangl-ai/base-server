@@ -1,5 +1,6 @@
 package com.huangc.servicefeign.modules.api.feign;
 
+import com.huangc.servicefeign.modules.common.Result;
 import org.springframework.stereotype.Component;
 
 /**
@@ -17,5 +18,10 @@ public class SchedualServiceHiHystric implements SchedualServiceHi {
     @Override
     public String sayHiFromClientTwo(String name) {
         return "a error happenedm "+name;
+}
+
+    @Override
+    public Result sayHiFromClientTwoe(String name) {
+        return new Result().error();
     }
 }

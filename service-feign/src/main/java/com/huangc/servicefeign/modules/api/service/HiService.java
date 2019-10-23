@@ -1,5 +1,6 @@
 package com.huangc.servicefeign.modules.api.service;
 
+import com.huangc.servicefeign.modules.common.Result;
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,4 +13,6 @@ public interface HiService {
     String sayHiFromClientOne(String name);
 
     String sayHiFromClientTwo(String name);
+
+    Result sayHiFromClientTwoe(String name);
 }
