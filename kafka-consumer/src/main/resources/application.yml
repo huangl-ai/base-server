@@ -1,0 +1,9 @@
+server:
+  port: 8080
+logging:
+  config: classpath:log4j-spring-kafka.xml
+kafka:
+  broker-server: 172.20.105.209:9092
+#  broker-server: 192.168.0.18:9092
+#  zookeeper-server: 192.168.0.18:2181
+  zookeeper-server: 172.20.105.209:2181
