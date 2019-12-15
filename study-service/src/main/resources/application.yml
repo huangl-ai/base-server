@@ -1,0 +1,16 @@
+application:
+  name: ÔÆ»ù´¡Æ½Ì¨
+  code: CloudService
+  adminUser: admin
+server:
+  port: 8010
+  servlet:
+    context-path: /${application.code}
+spring:
+  resources:
+    static-locations: classpath:/resources/
+oauth2:
+  server: http://oauth.gzmeiin.com.cn:8000
+  client:
+    clientId: CloudService
+    clientSecret: CloudService

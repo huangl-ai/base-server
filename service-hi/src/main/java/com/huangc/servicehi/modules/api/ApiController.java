@@ -40,16 +40,12 @@ public class ApiController {
     }
 
     public static void main(String[] args) {
+        int[] a ={3,2,4};
+       a = twoSum(a,6);
+        System.out.println(a);
 
-/*        Scanner sc = new Scanner(System.in);
-        while (sc.hasNext()) {
-            String s1 = sc.nextLine();
-            String s2 = sc.nextLine();
-            String pattern = "[" + s2 + "]";
-            String result = s1.replaceAll(pattern, "");
-            System.out.println(result);
-        }*/
-        System.out.println(checkDifferent("asdfhkl"));
+
+
 
     }
 
@@ -65,6 +61,24 @@ public class ApiController {
             return true;
         }
         return false;
+    }
+
+    public static int[] twoSum(int[] nums, int target) {
+        int [] result=new int[2];
+        for(int i=0;i<nums.length;i++){
+
+            for(int j=i+1;j<nums.length;j++){
+
+                if(nums[i]+nums[j]==target){
+                    result[0]=i;
+                    result[1]=j;
+                    return result;
+                }
+            }
+
+        }
+        return result;
+
     }
 
 }

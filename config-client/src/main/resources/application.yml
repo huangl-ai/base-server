@@ -7,9 +7,15 @@ spring:
   cloud:
     config:
       label: master
-      uri: http://localhost:8888
+#      uri: http://localhost:8888 采用注册中心获取
       name: config-info
-      profile: dev
+      profile: prod
+      discovery:
+        #从配置中心读取文件
+        enabled: true
+        #配置中心的servieId，即服务名
+        service-id: config-server
+
     bus:
       env:
         enabled: true
@@ -24,7 +30,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://peer1:8761/eureka/,http://peer2:8762/eureka/,http://peer3:8763/eureka/
+      defaultZone: http://peer1:8761/eureka/
 
 management:
   endpoints:

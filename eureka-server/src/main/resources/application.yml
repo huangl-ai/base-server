@@ -49,6 +49,9 @@ eureka:
   instance:
     hostname: localhost
   client:
+    #通过eureka.client.registerWithEureka：false和fetchRegistry：false来表明自己是一个eureka server.
+    registerWithEureka: false
+    fetchRegistry: false
     serviceUrl:
       #      defaultZone: http://192.168.0.18:8761/eureka/
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
