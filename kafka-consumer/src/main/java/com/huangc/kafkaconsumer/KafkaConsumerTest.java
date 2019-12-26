@@ -24,7 +24,7 @@ public class KafkaConsumerTest {
         props.put("bootstrap.servers", "172.20.105.209:9092");
         //Kafka集群
         //消费组名
-        props.put("group.id", "InternalPortalGroup");
+        props.put("group.id", "0001AGroup");
         props.put("enable.auto.commit", "true");
         props.put("auto.commit.interval.ms", "1000");
         props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
@@ -33,7 +33,7 @@ public class KafkaConsumerTest {
         props.put("sasl.mechanism", "SCRAM-SHA-256");
         KafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);
         //消息主题
-        consumer.subscribe(Arrays.asList("InternalPortalTopic","QUEUE_TESTTopic"));
+        consumer.subscribe(Arrays.asList("0001ATopic"));
         while (true) {
             ConsumerRecords<String, String> records = consumer.poll(100);
             for (ConsumerRecord<String, String> record : records) {
@@ -49,7 +49,7 @@ public class KafkaConsumerTest {
         props.put("bootstrap.servers", "172.20.105.209:9092");
         //Kafka集群
         //消费组名
-        props.put("group.id", "InternalPortalGroup");
+        props.put("group.id", "CDZSJPTGroup");
         props.put("enable.auto.commit", "true");
         props.put("auto.commit.interval.ms", "1000");
         props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
@@ -61,7 +61,7 @@ public class KafkaConsumerTest {
         Thread thread1 = new Thread(()->{
             KafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);
             //消息主题
-            consumer.subscribe(Arrays.asList("InternalPortalTopic"));
+            consumer.subscribe(Arrays.asList("CDZSJPTTopic"));
             while (true) {
                 ConsumerRecords<String, String> records = consumer.poll(100);
                 for (ConsumerRecord<String, String> record : records) {
@@ -83,7 +83,7 @@ public class KafkaConsumerTest {
     });
 
     thread1.start();
-    thread2.start();
+//    thread2.start();
 }
 }
 
