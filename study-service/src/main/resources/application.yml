@@ -8,6 +8,6 @@ server:
 #    context-path: /${application.code}
 spring:
   resources:
-    static-locations: classpath:/resources/
+    static-locations: classpath:/static/
 hello:
   enable: true

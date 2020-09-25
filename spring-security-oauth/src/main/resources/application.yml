@@ -5,4 +5,4 @@ security:
     client:
       client-id: test
       client-secret: test123
-      registered-redirect-uri:  https://www.baidu.com
+      registered-redirect-uri:  http://www.baidu.com

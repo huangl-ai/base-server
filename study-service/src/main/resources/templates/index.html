@@ -9,4 +9,35 @@
 <body>
 <div> this is a page</div>
 </body>
+<script th:src="@{/public/plugins/jquery/jquery.min.js}"></script>
+<script th:src="@{/scripts/index.js}"></script>
+
+<p>this is p </p>
+<button id="btn1" data-id="1234">click here</button>
+
+
+<div class="ancestors">
+    <div style="width:500px;">div (曾祖父元素)
+        <ul>ul (祖父元素)
+            <li data-id="aaaaa">li (父元素1)
+                <span>span</span>
+            </li>
+            <li data-id="ccc">li (父元素2)
+                <span>span</span>
+            </li>
+        </ul>
+    </div>
+
+    <div style="width:500px;">div (祖父元素)
+        <p data-id="bbb">p (父元素)
+            <span>span</span>
+        </p>
+    </div>
+
+
+    <div class="test" id="ele1">元素一</div>
+    <div class="test" id="ele2">元素二</div>
+
+    <div id="test" data="abc"></div>
+</div>
 </html>

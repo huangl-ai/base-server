@@ -29,6 +29,7 @@
         <module>config-client</module>
         <module>kafka-consumer</module>
         <module>study-service</module>
+        <module>base-sso</module>
     </modules>
 
     <properties>
